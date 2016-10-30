@@ -1,4 +1,5 @@
 PKG_NAME := nosexcover
-URL := https://pypi.python.org/packages/source/n/nosexcover/nosexcover-1.0.10.tar.gz
+URL := http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
+ARCHIVES :=
 
 include ../common/Makefile.common
