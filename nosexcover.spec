@@ -4,7 +4,7 @@
 #
 Name     : nosexcover
 Version  : 1.0.11
-Release  : 18
+Release  : 19
 URL      : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Source0  : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Summary  : Extends nose.plugins.cover to add Cobertura-style XML reports
@@ -37,13 +37,15 @@ python components for the nosexcover package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484555317
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484555317
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
