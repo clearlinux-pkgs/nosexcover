@@ -4,7 +4,7 @@
 #
 Name     : nosexcover
 Version  : 1.0.11
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Source0  : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Summary  : Extends nose.plugins.cover to add Cobertura-style XML reports
@@ -19,23 +19,9 @@ BuildRequires : coverage
 BuildRequires : nose
 
 %description
-nose-xmlcover
 --------------
-
-A companion to the built-in nose.plugins.cover, this plugin will write out an XML coverage report to a file named coverage.xml.
-
-It will honor all the options you pass to the `Nose coverage plugin <http://somethingaboutorange.com/mrl/projects/nose/1.0.0/plugins/cover.html>`_, especially --cover-package.
-
-Usage
-------
-You can not use both --with-xcoverage and --with-coverage.  Using --with-xcover implies --with-coverage
-
-If you want to change the name of the output file you can use --xcoverage-file=FILE (--cover-xml-file from coverage won't work)
-
-As of nose-xcover 1.0.6 --with-xcoverage provides all the functionality of the built-in coverage plugin in addition to Cobertura-style output::
-
-    #nosetests --with-xcoverage {{ coverage options }}
-    nosetests --with-xcoverage --cover-package=myapp --cover-tests
+        
+        A companion to the built-in nose.plugins.cover, this plugin will write out an XML coverage report to a file named coverage.xml.
 
 %package python
 Summary: python components for the nosexcover package.
@@ -51,6 +37,8 @@ Summary: python3 components for the nosexcover package.
 Group: Default
 Requires: python3-core
 Provides: pypi(nosexcover)
+Requires: pypi(coverage)
+Requires: pypi(nose)
 
 %description python3
 python3 components for the nosexcover package.
@@ -65,12 +53,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583187333
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603397003
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
