@@ -4,7 +4,7 @@
 #
 Name     : nosexcover
 Version  : 1.0.11
-Release  : 35
+Release  : 36
 URL      : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Source0  : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Summary  : Extends nose.plugins.cover to add Cobertura-style XML reports
