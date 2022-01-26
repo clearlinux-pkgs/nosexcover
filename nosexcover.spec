@@ -4,7 +4,7 @@
 #
 Name     : nosexcover
 Version  : 1.0.11
-Release  : 43
+Release  : 44
 URL      : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Source0  : http://pypi.debian.net/nosexcover/nosexcover-1.0.11.tar.gz
 Summary  : Extends nose.plugins.cover to add Cobertura-style XML reports
@@ -12,11 +12,9 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: nosexcover-python = %{version}-%{release}
 Requires: nosexcover-python3 = %{version}-%{release}
-Requires: coverage
-Requires: nose
 BuildRequires : buildreq-distutils3
-BuildRequires : coverage
-BuildRequires : nose
+BuildRequires : pypi(coverage)
+BuildRequires : pypi(nose)
 
 %description
 --------------
@@ -53,7 +51,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635777131
+export SOURCE_DATE_EPOCH=1643219845
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
